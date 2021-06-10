@@ -3,7 +3,7 @@
  * @Author: tangguowei
  * @Date: 2021-06-09 17:56:40
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-09 18:19:58
+ * @LastEditTime: 2021-06-10 08:36:52
  */
 exports.allServices = [
   {
@@ -98,15 +98,17 @@ exports.allServices = [
       'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
   },
 ];
-exports.allUsers = [{
-  id: 1,
-  email: 'admin@vuerack.com',
-  password: 'vuerack',
+exports.userinfo = {
   name: 'ice',
   gender: '男',
   summary: '如何促进关系升级？教你省时高效的最佳方法！',
   description: '佛曰：命由己造，相由心生，世间万物皆是化相；心不动，万物皆不动，心不变，万物皆不变',
   role: '普通用户',
+};
+exports.allUsers = [{
+  id: 1,
+  email: 'admin@vuerack.com',
+  password: 'vuerack',
 }];
 exports.allStores = [{
   id: '01',

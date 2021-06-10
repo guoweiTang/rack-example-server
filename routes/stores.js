@@ -3,10 +3,12 @@
  * @Author: tangguowei
  * @Date: 2021-06-09 18:56:26
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-09 19:01:50
+ * @LastEditTime: 2021-06-10 09:18:51
  */
 const express = require('express');
-const { allUsers } = require('../config');
+const { allStores } = require('../config');
+
+const router = express.Router();
 
 router.get('/', ({ params: { id } }, res) => {
   const result = allStores.map(item => ({
