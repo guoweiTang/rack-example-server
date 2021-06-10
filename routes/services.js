@@ -1,9 +1,9 @@
 /*
- * @Description: file content
+ * @Description: 服务
  * @Author: tangguowei
  * @Date: 2021-06-09 17:35:32
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-09 18:55:04
+ * @LastEditTime: 2021-06-10 15:15:34
  */
 const express = require('express');
 const { allServices } = require('../config');
@@ -45,3 +45,4 @@ router.delete('/:id', ({ params: { id }, body }, res) => {
   })
 })
 
+module.exports = router;

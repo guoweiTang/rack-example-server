@@ -1,9 +1,9 @@
 /*
- * @Description: file content
+ * @Description: 商店
  * @Author: tangguowei
  * @Date: 2021-06-09 18:56:26
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-10 09:18:51
+ * @LastEditTime: 2021-06-10 15:15:42
  */
 const express = require('express');
 const { allStores } = require('../config');
@@ -27,3 +27,5 @@ router.get('/:id/goods', ({ params: { id } }, res) => {
     results: goods,
   })
 })
+
+module.exports = router;

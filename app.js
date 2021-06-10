@@ -1,12 +1,11 @@
 /*
- * @Description: 启动文件
+ * @Description: 集合各个中间件
  * @Author: tangguowei
  * @Date: 2021-06-09 16:50:52
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-10 09:24:02
+ * @LastEditTime: 2021-06-10 15:14:59
  */
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 
@@ -17,4 +16,4 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
 app.use(express.static(__dirname + '/public'));
 app.use(routes);
 
-app.listen(3000);
+module.exports = app;

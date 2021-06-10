@@ -3,7 +3,7 @@
  * @Author: tangguowei
  * @Date: 2021-06-09 17:16:43
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-09 18:54:52
+ * @LastEditTime: 2021-06-10 11:05:22
  */
 const express = require('express');
 const auth = require('./auth');
@@ -12,7 +12,7 @@ const stores = require('./stores');
 const account = require('./account');
 
 const router = express.Router();
-const baseDir = 'api';
+const baseDir = '/api';
 
 // 授权
 router.use(`${baseDir}/auth`, auth);

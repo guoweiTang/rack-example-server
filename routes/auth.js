@@ -3,7 +3,7 @@
  * @Author: tangguowei
  * @Date: 2021-06-09 17:35:17
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-09 18:54:12
+ * @LastEditTime: 2021-06-10 11:07:31
  */
 const express = require('express');
 const { allUsers } = require('../config');
@@ -65,3 +65,5 @@ router.post('/reset-password', ({ body: { email, oldPassword, newPassword } }, r
     });
   }
 })
+
+module.exports = router;
