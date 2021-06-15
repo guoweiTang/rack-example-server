@@ -3,7 +3,7 @@
  * @Author: tangguowei
  * @Date: 2021-06-09 17:35:17
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-10 11:07:31
+ * @LastEditTime: 2021-06-15 10:17:31
  */
 const express = require('express');
 const { allUsers } = require('../config');
@@ -49,7 +49,11 @@ router.post('/register', ({ body: { email, password } }, res) => {
 router.post('/reset-password', ({ body: { email, oldPassword, newPassword } }, res) => {
   const targetIndex = allUsers.findIndex(item => item.email === email && item.password === oldPassword);
   if (targetIndex > -1) {
-    if (allUsers[targetIndex].password === newPassword) {
+    if(email === allUsers[0].email) {
+      res.status(403).json({
+        message: '系统账户不允许修改',
+      })
+    } else if (allUsers[targetIndex].password === newPassword) {
       res.status(400).json({
         message: '新密码不能与原密码相同',
       })
