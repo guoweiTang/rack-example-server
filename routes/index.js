@@ -3,12 +3,11 @@
  * @Author: tangguowei
  * @Date: 2021-06-09 17:16:43
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-06-10 11:05:22
+ * @LastEditTime: 2021-12-14 18:05:08
  */
 const express = require('express');
 const auth = require('./auth');
-const services = require('./services');
-const stores = require('./stores');
+const goods = require('./goods');
 const account = require('./account');
 
 const router = express.Router();
@@ -17,13 +16,10 @@ const baseDir = '/api';
 // 授权
 router.use(`${baseDir}/auth`, auth);
 
-// 服务
-router.use(`${baseDir}/services`, services);
+// 商品
+router.use(`${baseDir}/goods`, goods);
 
 // 账户
 router.use(`${baseDir}/account`, account);
-
-// 商店
-router.use(`${baseDir}/stores`, stores);
 
 module.exports = router;
