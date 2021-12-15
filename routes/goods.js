@@ -3,7 +3,7 @@
  * @Author: tangguowei
  * @Date: 2021-06-09 18:56:26
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-12-14 18:21:04
+ * @LastEditTime: 2021-12-15 15:22:18
  */
 const express = require('express');
 const { allGoods } = require('../config');
@@ -23,10 +23,7 @@ router.get('/:id', ({ params: { id } }, res) => {
       message: '该商品不存在',
     })
   } else {
-    res.json({
-      count: goods.length,
-      results: goods,
-    })
+    res.json(result)
   }
 })
 router.delete('/:id', ({ params: { id } }, res) => {
