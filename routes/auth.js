@@ -3,7 +3,7 @@
  * @Author: tangguowei
  * @Date: 2021-06-09 17:35:17
  * @LastEditors: tangguowei
- * @LastEditTime: 2021-12-14 17:59:11
+ * @LastEditTime: 2021-12-15 16:36:25
  */
 const express = require('express');
 const { allUsers } = require('../config');
@@ -18,8 +18,7 @@ router.post('/login', ({ body: { email, password } }, res) => {
       refreshToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBwb2V0aWNsb3VkLmNvbSIsImV4cCI6MTYyMjM1OTQ5NSwidHlwIjoicmVmcmVzaCJ9.He1tC8KYNzNCCZfeJIIGgSlTkT2WZ9mKjbw2VPUkDRg',
     })
   } else {
-    res.send({
-      status: -1,
+    res.status(400).json({
       message: '帐号或密码错误'
     })
   }
@@ -38,10 +37,6 @@ router.post('/register', ({ body: { email, password } }, res) => {
   } else {
     res.status(400).json({
       message: '账户已存在，可直接登录',
-    })
-    res.send({
-      status: -1,
-      message: '帐号或密码错误'
     })
   }
 })
@@ -65,7 +60,7 @@ router.post('/reset-password', ({ body: { email, oldPassword, newPassword } }, r
     }
   } else {
     res.status(400).json({
-      message: '账户或密码错误，请重新输入',
+      message: '账户或原密码错误，请重新输入',
     });
   }
 })
